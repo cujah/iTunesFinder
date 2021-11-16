@@ -137,11 +137,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jb7-bZ-bV4">
+                                <rect key="frame" x="0.0" y="256" width="414" height="640"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackId" id="90g-QH-G3v" customClass="TrackTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="90g-QH-G3v" id="LgX-aA-TOW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-dD-zeV">
+                                                    <rect key="frame" x="20" y="11" width="39" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="oMm-vJ-NH7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Qr-zhP">
+                                                    <rect key="frame" x="67" y="11" width="327" height="21.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="dj5-EC-v2D"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hOH-Qr-zhP" firstAttribute="trailing" secondItem="LgX-aA-TOW" secondAttribute="trailingMargin" id="5t5-o9-5hV"/>
+                                                <constraint firstItem="iJ5-dD-zeV" firstAttribute="leading" secondItem="LgX-aA-TOW" secondAttribute="leading" constant="20" symbolic="YES" id="8Hu-aH-VHR"/>
+                                                <constraint firstItem="hOH-Qr-zhP" firstAttribute="leading" secondItem="iJ5-dD-zeV" secondAttribute="trailing" constant="8" symbolic="YES" id="9AQ-tT-oEc"/>
+                                                <constraint firstItem="hOH-Qr-zhP" firstAttribute="top" secondItem="LgX-aA-TOW" secondAttribute="topMargin" id="GDo-g6-Ofm"/>
+                                                <constraint firstItem="iJ5-dD-zeV" firstAttribute="top" secondItem="LgX-aA-TOW" secondAttribute="top" constant="11" id="N1l-9V-j3o"/>
+                                                <constraint firstAttribute="bottom" secondItem="iJ5-dD-zeV" secondAttribute="bottom" constant="11.5" id="iNG-jm-Keq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hOH-Qr-zhP" secondAttribute="bottom" id="skz-gk-GW3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trackNameLabel" destination="hOH-Qr-zhP" id="CfX-lW-6up"/>
+                                            <outlet property="trackNumberLabel" destination="iJ5-dD-zeV" id="HUA-Cl-xkM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V4p-Q4-g6T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zhl-oQ-NOG" firstAttribute="leading" secondItem="V4p-Q4-g6T" secondAttribute="leading" constant="20" id="42L-L6-b8t"/>
+                            <constraint firstAttribute="bottom" secondItem="jb7-bZ-bV4" secondAttribute="bottom" id="4zV-Fz-9qc"/>
                             <constraint firstItem="Zhl-oQ-NOG" firstAttribute="top" secondItem="tNS-N5-7GO" secondAttribute="bottom" constant="4" id="8ny-JD-iD2"/>
                             <constraint firstItem="D9j-ru-EkQ" firstAttribute="top" secondItem="k1W-U4-xAj" secondAttribute="bottom" constant="8" symbolic="YES" id="A5h-Lo-HS6"/>
                             <constraint firstItem="LuZ-0M-qEH" firstAttribute="leading" secondItem="k1W-U4-xAj" secondAttribute="trailing" constant="28" id="AJo-5m-xWR"/>
@@ -151,8 +199,10 @@
                             <constraint firstItem="D9j-ru-EkQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tNS-N5-7GO" secondAttribute="trailing" constant="8" symbolic="YES" id="KsJ-iY-OeE"/>
                             <constraint firstItem="k1W-U4-xAj" firstAttribute="leading" secondItem="V4p-Q4-g6T" secondAttribute="leading" constant="20" id="NXb-u8-aGM"/>
                             <constraint firstItem="ZqM-du-UOa" firstAttribute="top" secondItem="tNS-N5-7GO" secondAttribute="bottom" constant="4" id="Ouq-Lr-AGR"/>
+                            <constraint firstItem="jb7-bZ-bV4" firstAttribute="trailing" secondItem="V4p-Q4-g6T" secondAttribute="trailing" id="XIK-8G-gUQ"/>
                             <constraint firstItem="V4p-Q4-g6T" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6CL-lY-mYg" secondAttribute="trailing" symbolic="YES" id="Xag-S6-uCU"/>
                             <constraint firstItem="V4p-Q4-g6T" firstAttribute="trailing" secondItem="Xin-1j-eU9" secondAttribute="trailing" constant="20" id="Xjo-wl-FaG"/>
+                            <constraint firstItem="jb7-bZ-bV4" firstAttribute="leading" secondItem="V4p-Q4-g6T" secondAttribute="leading" id="YXW-St-khu"/>
                             <constraint firstItem="D9j-ru-EkQ" firstAttribute="leading" secondItem="LuZ-0M-qEH" secondAttribute="leading" id="ZlD-j5-w3G"/>
                             <constraint firstItem="k1W-U4-xAj" firstAttribute="top" secondItem="V4p-Q4-g6T" secondAttribute="top" constant="12" id="ajC-Yx-xLo"/>
                             <constraint firstItem="V4p-Q4-g6T" firstAttribute="trailing" secondItem="LuZ-0M-qEH" secondAttribute="trailing" constant="20" id="cyh-ML-hTC"/>
@@ -161,6 +211,7 @@
                             <constraint firstItem="6CL-lY-mYg" firstAttribute="top" secondItem="D9j-ru-EkQ" secondAttribute="bottom" constant="4" id="jgU-qp-hK7"/>
                             <constraint firstItem="tNS-N5-7GO" firstAttribute="leading" secondItem="V4p-Q4-g6T" secondAttribute="leading" constant="20" id="kEV-fl-157"/>
                             <constraint firstItem="6CL-lY-mYg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZqM-du-UOa" secondAttribute="trailing" constant="8" symbolic="YES" id="lTC-SI-nVX"/>
+                            <constraint firstItem="jb7-bZ-bV4" firstAttribute="top" secondItem="ZqM-du-UOa" secondAttribute="bottom" constant="8" symbolic="YES" id="lmJ-3i-Tln"/>
                             <constraint firstItem="Xin-1j-eU9" firstAttribute="leading" secondItem="k1W-U4-xAj" secondAttribute="trailing" constant="28" id="ozY-Lg-Vdr"/>
                             <constraint firstItem="V4p-Q4-g6T" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D9j-ru-EkQ" secondAttribute="trailing" symbolic="YES" id="v7j-xk-YPQ"/>
                         </constraints>
@@ -171,6 +222,7 @@
                         <outlet property="albumNameLabel" destination="Xin-1j-eU9" id="ZpZ-IN-9Mc"/>
                         <outlet property="artistNameLabel" destination="LuZ-0M-qEH" id="gMP-Qi-d0C"/>
                         <outlet property="genreLable" destination="6CL-lY-mYg" id="4QM-Il-BOR"/>
+                        <outlet property="tableView" destination="jb7-bZ-bV4" id="8bD-Gx-B2d"/>
                         <outlet property="tracksNumberLabel" destination="ZqM-du-UOa" id="BAJ-3L-yLM"/>
                         <outlet property="yearLabel" destination="D9j-ru-EkQ" id="aE9-Xl-QwA"/>
                     </connections>

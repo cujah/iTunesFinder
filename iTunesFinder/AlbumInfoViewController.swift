@@ -18,6 +18,7 @@ class AlbumInfoViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var tracksNumberLabel: UILabel!
     @IBOutlet weak var genreLable: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,14 @@ class AlbumInfoViewController: UIViewController {
         artistNameLabel.numberOfLines = 0
         confrigureAlbumInfo()
         fetchSong(album: album)
+        setupDelegate()
     }
+    
+    private func setupDelegate() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
     
     private func confrigureAlbumInfo() {
         guard let album = album else { return }
@@ -61,6 +69,7 @@ class AlbumInfoViewController: UIViewController {
             if error == nil {
                 guard let songModel = songModel else { return }
                 self?.songs = songModel.results
+                self?.tableView.reloadData()
                 //self?.collectionView.reloadData()
             } else {
                 print(error!.localizedDescription)
@@ -80,4 +89,23 @@ class AlbumInfoViewController: UIViewController {
         let date = formatDate.string(from: backendDate)
         return date
     }
+}
+
+// MARK: - Table view data source
+
+extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        songs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trackId", for: indexPath) as! TrackTableViewCell
+        let song = songs[indexPath.row].trackName
+        cell.trackNumberLabel.text = "\(indexPath.row)"
+        cell.trackNameLabel.text = song
+        return cell
+    }
+    
 }
