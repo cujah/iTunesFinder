@@ -9,4 +9,8 @@ import UIKit
 
 class AlbumCoverCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet var albumCoverImageView: UIImageView!
+    
+    
 }

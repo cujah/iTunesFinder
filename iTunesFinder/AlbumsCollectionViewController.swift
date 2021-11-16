@@ -7,20 +7,39 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "albumCoverCell"
+
+let imageNameArray = ["Baile & Vibes (by VHOOR)",
+                      "Baile & Sauce (by VHOOR)",
+                      "Baile & Beats (by VHOOR)",
+                      "Ritmo (by VHOOR)",
+                      "Brazillian Boogie - EP (by VHOOR)",
+                      "Baile & Drip (by VHOOR)",
+                      "Acima - Single (by Sango & VHOOR)",
+                      "Quero Ver (feat. VHOOR) - Single (by Tui)",
+                      "Dança pra Mim (feat. Vhoor) [Remix] - Single (by XISNATHAN)",
+                      "Dança pra Mim (feat. Vhoor) - Single (by XISNATHAN)",
+                      "Baile (by FBC & VHOOR)",
+                      "Baile & Trill - EP (by VHOOR, Enzo Di Carlo & Luiz Alves)",
+                      "sedenta (feat. VHOOR) - Single (by Mayi)",
+                      "Pros Nossos (feat. fleezus & VHOOR) - Single (by Well)",
+                      "Delírios - Single (by FBC, VHOOR & Djair Voz Cristalina)",
+                      "Muita Fé (feat. Vhoor) - Single (by Well)",
+                      "MPBEATS - EP (by VHOOR)",
+                      "Outro Rolê (by FBC & VHOOR)",
+                      "Minha Vida - Single (by Mac Júlia & VHOOR)",
+                      "Capoeira - Single (by VHOOR)"
+                
+]
+
 
 class AlbumsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+      
+        
     }
 
     /*
@@ -35,21 +54,15 @@ class AlbumsCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return imageNameArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCoverCollectionViewCell
+        
+        cell.albumCoverImageView.image = UIImage(named: imageNameArray[indexPath.row])
+        
     
         return cell
     }

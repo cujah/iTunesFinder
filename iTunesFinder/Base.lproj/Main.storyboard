@@ -1,46 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DPS-K3-soZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yeG-sd-dnc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Albums Collection View Controller-->
-        <scene sceneID="BEZ-NI-lxr">
+        <!--iTunesFinder-->
+        <scene sceneID="sSH-tT-8L8">
             <objects>
-                <collectionViewController id="DPS-K3-soZ" customClass="AlbumsCollectionViewController" customModule="iTunesFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5rv-n7-hWj">
+                <collectionViewController id="GM4-zt-B0y" customClass="AlbumsCollectionViewController" customModule="iTunesFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="312-gd-QKh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KpY-Y2-1Da">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QgW-9y-SY5">
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCoverCell" id="ZQo-hI-qOG" customClass="AlbumCoverCollectionViewCell" customModule="iTunesFinder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="albumCoverCell" id="hRE-y9-YjH" customClass="AlbumCoverCollectionViewCell" customModule="iTunesFinder" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2hu-i3-rtX">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zol-Ng-6Qd">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GhK-yT-c2f">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GhK-yT-c2f" firstAttribute="top" secondItem="Zol-Ng-6Qd" secondAttribute="top" id="Sdh-Cr-EAe"/>
+                                        <constraint firstAttribute="trailing" secondItem="GhK-yT-c2f" secondAttribute="trailing" id="UN3-9o-wSs"/>
+                                        <constraint firstAttribute="bottom" secondItem="GhK-yT-c2f" secondAttribute="bottom" id="bqT-mr-aGB"/>
+                                        <constraint firstItem="GhK-yT-c2f" firstAttribute="leading" secondItem="Zol-Ng-6Qd" secondAttribute="leading" id="xf9-6H-C7n"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="albumCoverImageView" destination="GhK-yT-c2f" id="M9B-6S-Jai"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="DPS-K3-soZ" id="xVK-xy-kw6"/>
-                            <outlet property="delegate" destination="DPS-K3-soZ" id="h1s-m7-KnH"/>
+                            <outlet property="dataSource" destination="GM4-zt-B0y" id="u8k-O8-qau"/>
+                            <outlet property="delegate" destination="GM4-zt-B0y" id="2gz-qu-O8R"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="iTunesFinder" largeTitleDisplayMode="always" id="esW-eC-MB9"/>
+                    <connections>
+                        <segue destination="FJp-jI-NSy" kind="show" identifier="showAlbumInfoSegue" id="czY-oK-tTR"/>
+                    </connections>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rUw-qJ-LgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="58"/>
+            <point key="canvasLocation" x="570" y="51"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TAv-en-CBm">
+            <objects>
+                <viewController id="FJp-jI-NSy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bul-K1-d7W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V4p-Q4-g6T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Z8F-8G-yZG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-s7-1ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1278" y="51"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Ne-Dn-zSy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yeG-sd-dnc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zDH-Ll-0DG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GM4-zt-B0y" kind="relationship" relationship="rootViewController" id="AIG-Nv-09n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERt-qd-3He" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-157.97101449275362" y="50.892857142857139"/>
         </scene>
     </scenes>
     <resources>
