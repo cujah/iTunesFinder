@@ -46,6 +46,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
         
     }
     
+    
     private func setupSearhController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
@@ -71,10 +72,18 @@ class AlbumsCollectionViewController: UICollectionViewController {
         
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
             if error == nil {
+                
                 guard let albumModel = albumModel else { return }
-                self?.albums = albumModel.results
-                print(self?.albums)
-                self?.collectionView.reloadData()
+                
+                if albumModel.results != [] {
+                    let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
+                        return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
+                    }
+                    self?.albums = sortedAlbums
+                    self?.collectionView.reloadData()
+                } else {
+                    // self?.alertOK(title: "Error", message: "Album not found =( Add some words")
+                }
             } else {
                 print(error!.localizedDescription)
             }
@@ -108,11 +117,13 @@ class AlbumsCollectionViewController: UICollectionViewController {
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if searchText != "" {
+        let searchTextRequest = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        
+        if searchTextRequest != "" {
             
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
-                let search = searchText.split(separator: " ").joined(separator: "%20")
+                let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
                 self?.fetchAlbums(albumName: search)
             })
         }
