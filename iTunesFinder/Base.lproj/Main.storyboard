@@ -59,7 +59,7 @@
             </objects>
             <point key="canvasLocation" x="570" y="51"/>
         </scene>
-        <!--Album Info View Controller-->
+        <!--Album Info-->
         <scene sceneID="TAv-en-CBm">
             <objects>
                 <viewController id="FJp-jI-NSy" customClass="AlbumInfoViewController" customModule="iTunesFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                             <constraint firstItem="V4p-Q4-g6T" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D9j-ru-EkQ" secondAttribute="trailing" symbolic="YES" id="v7j-xk-YPQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Z8F-8G-yZG"/>
+                    <navigationItem key="navigationItem" title="Album Info" largeTitleDisplayMode="always" id="Z8F-8G-yZG"/>
                     <connections>
                         <outlet property="AlbumCoverImage" destination="k1W-U4-xAj" id="3Do-9X-mq0"/>
                         <outlet property="albumNameLabel" destination="Xin-1j-eU9" id="ZpZ-IN-9Mc"/>
