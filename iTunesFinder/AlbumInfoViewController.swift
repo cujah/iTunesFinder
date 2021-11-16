@@ -22,8 +22,7 @@ class AlbumInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        albumNameLabel.numberOfLines = 0
-        artistNameLabel.numberOfLines = 0
+        
         confrigureAlbumInfo()
         fetchSong(album: album)
         setupDelegate()
@@ -36,6 +35,9 @@ class AlbumInfoViewController: UIViewController {
     
     
     private func confrigureAlbumInfo() {
+//        albumNameLabel.numberOfLines = 0
+//        artistNameLabel.numberOfLines = 0
+        
         guard let album = album else { return }
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
@@ -70,13 +72,12 @@ class AlbumInfoViewController: UIViewController {
                 guard let songModel = songModel else { return }
                 self?.songs = songModel.results
                 self?.tableView.reloadData()
-                //self?.collectionView.reloadData()
             } else {
                 print(error!.localizedDescription)
                 // self?.alertOk(title: "Error", error!.localizedDescription)
             }
         }
-
+        
     }
     
     private func setDateFormat(date: String) -> String {
@@ -94,7 +95,7 @@ class AlbumInfoViewController: UIViewController {
 // MARK: - Table view data source
 
 extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
-   
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         songs.count
@@ -106,6 +107,10 @@ extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.trackNumberLabel.text = "\(indexPath.row)"
         cell.trackNameLabel.text = song
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
