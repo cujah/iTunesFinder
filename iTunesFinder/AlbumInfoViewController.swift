@@ -10,6 +10,7 @@ import UIKit
 class AlbumInfoViewController: UIViewController {
     
     var album: Album?
+    var songs = [Song]()
     
     @IBOutlet weak var albumCoverImage: UIImageView!
     @IBOutlet weak var albumNameLabel: UILabel!
@@ -23,6 +24,7 @@ class AlbumInfoViewController: UIViewController {
         albumNameLabel.numberOfLines = 0
         artistNameLabel.numberOfLines = 0
         confrigureAlbumInfo()
+        fetchSong(album: album)
     }
     
     private func confrigureAlbumInfo() {
@@ -47,6 +49,25 @@ class AlbumInfoViewController: UIViewController {
         } else {
             self.albumCoverImage.image = nil
         }
+    }
+    
+    private func fetchSong(album: Album?) {
+        guard let album = album else { return }
+        
+        let idAlbum = album.collectionId
+        let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
+        
+        NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songModel, error in
+            if error == nil {
+                guard let songModel = songModel else { return }
+                self?.songs = songModel.results
+                //self?.collectionView.reloadData()
+            } else {
+                print(error!.localizedDescription)
+                // self?.alertOk(title: "Error", error!.localizedDescription)
+            }
+        }
+
     }
     
     private func setDateFormat(date: String) -> String {

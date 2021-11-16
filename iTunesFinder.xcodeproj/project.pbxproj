@@ -19,6 +19,7 @@
 		095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A22743DBFE00AB4217 /* AlbumModel.swift */; };
 		095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A42743DD4600AB4217 /* NetworkRequest.swift */; };
 		095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A82743E11900AB4217 /* NetworkDataFetch.swift */; };
+		095242AB27442F2300AB4217 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AA27442F2200AB4217 /* SongsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		095242A22743DBFE00AB4217 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		095242A42743DD4600AB4217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		095242A82743E11900AB4217 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		095242AA27442F2200AB4217 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				095242A22743DBFE00AB4217 /* AlbumModel.swift */,
+				095242AA27442F2200AB4217 /* SongsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095242AB27442F2300AB4217 /* SongsModel.swift in Sources */,
 				095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,

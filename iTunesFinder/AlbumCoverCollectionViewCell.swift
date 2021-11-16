@@ -12,7 +12,8 @@ class AlbumCoverCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var albumCoverImageView: UIImageView!
     
-    func confrigureAlbumCell(album: Album) {
+    func confrigureAlbumCell(album: Album?) {
+        guard let album = album else { return }
         if let urlString = album.artworkUrl100 {
             
             NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
