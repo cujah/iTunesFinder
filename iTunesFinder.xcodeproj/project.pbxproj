@@ -15,6 +15,7 @@
 		0952429527439E3700AB4217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0952429327439E3700AB4217 /* LaunchScreen.storyboard */; };
 		0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */; };
 		0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */; };
+		095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0952429627439E3700AB4217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewController.swift; sourceTree = "<group>"; };
 		0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				0952428727439E3300AB4217 /* SceneDelegate.swift */,
 				0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */,
 				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
+				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
 				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,

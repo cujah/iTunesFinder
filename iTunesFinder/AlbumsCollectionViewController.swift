@@ -9,48 +9,49 @@ import UIKit
 
 private let reuseIdentifier = "albumCoverCell"
 
-let imageNameArray = ["Baile & Vibes (by VHOOR)",
-                      "Baile & Sauce (by VHOOR)",
-                      "Baile & Beats (by VHOOR)",
-                      "Ritmo (by VHOOR)",
-                      "Brazillian Boogie - EP (by VHOOR)",
-                      "Baile & Drip (by VHOOR)",
-                      "Acima - Single (by Sango & VHOOR)",
-                      "Quero Ver (feat. VHOOR) - Single (by Tui)",
-                      "Dança pra Mim (feat. Vhoor) [Remix] - Single (by XISNATHAN)",
-                      "Dança pra Mim (feat. Vhoor) - Single (by XISNATHAN)",
-                      "Baile (by FBC & VHOOR)",
-                      "Baile & Trill - EP (by VHOOR, Enzo Di Carlo & Luiz Alves)",
-                      "sedenta (feat. VHOOR) - Single (by Mayi)",
-                      "Pros Nossos (feat. fleezus & VHOOR) - Single (by Well)",
-                      "Delírios - Single (by FBC, VHOOR & Djair Voz Cristalina)",
-                      "Muita Fé (feat. Vhoor) - Single (by Well)",
-                      "MPBEATS - EP (by VHOOR)",
-                      "Outro Rolê (by FBC & VHOOR)",
-                      "Minha Vida - Single (by Mac Júlia & VHOOR)",
-                      "Capoeira - Single (by VHOOR)"
-                
-]
-
-
 class AlbumsCollectionViewController: UICollectionViewController {
 
+    let imageNameArray = ["Baile & Vibes (by VHOOR)",
+                          "Baile & Sauce (by VHOOR)",
+                          "Baile & Beats (by VHOOR)",
+                          "Ritmo (by VHOOR)",
+                          "Brazillian Boogie - EP (by VHOOR)",
+                          "Baile & Drip (by VHOOR)",
+                          "Acima - Single (by Sango & VHOOR)",
+                          "Quero Ver (feat. VHOOR) - Single (by Tui)",
+                          "Dança pra Mim (feat. Vhoor) [Remix] - Single (by XISNATHAN)",
+                          "Dança pra Mim (feat. Vhoor) - Single (by XISNATHAN)",
+                          "Baile (by FBC & VHOOR)",
+                          "Baile & Trill - EP (by VHOOR, Enzo Di Carlo & Luiz Alves)",
+                          "sedenta (feat. VHOOR) - Single (by Mayi)",
+                          "Pros Nossos (feat. fleezus & VHOOR) - Single (by Well)",
+                          "Delírios - Single (by FBC, VHOOR & Djair Voz Cristalina)",
+                          "Muita Fé (feat. Vhoor) - Single (by Well)",
+                          "MPBEATS - EP (by VHOOR)",
+                          "Outro Rolê (by FBC & VHOOR)",
+                          "Minha Vida - Single (by Mac Júlia & VHOOR)",
+                          "Capoeira - Single (by VHOOR)"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
         
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showAlbumInfoSegue" {
+            if self.collectionView.indexPathsForSelectedItems != nil {
+                let albumInfoVC = segue.destination as! AlbumInfoViewController
+                if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
+                    albumInfoVC.albumName = imageNameArray[indexPath.row]
+                }
+            }
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -63,7 +64,6 @@ class AlbumsCollectionViewController: UICollectionViewController {
         
         cell.albumCoverImageView.image = UIImage(named: imageNameArray[indexPath.row])
         
-    
         return cell
     }
 
