@@ -16,26 +16,8 @@ class AlbumsCollectionViewController: UICollectionViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     
-    let imageNameArray = ["Baile & Vibes (by VHOOR)",
-                          "Baile & Sauce (by VHOOR)",
-                          "Baile & Beats (by VHOOR)",
-                          "Ritmo (by VHOOR)",
-                          "Brazillian Boogie - EP (by VHOOR)",
-                          "Baile & Drip (by VHOOR)",
-                          "Acima - Single (by Sango & VHOOR)",
-                          "Quero Ver (feat. VHOOR) - Single (by Tui)",
-                          "Dança pra Mim (feat. Vhoor) [Remix] - Single (by XISNATHAN)",
-                          "Dança pra Mim (feat. Vhoor) - Single (by XISNATHAN)",
-                          "Baile (by FBC & VHOOR)",
-                          "Baile & Trill - EP (by VHOOR, Enzo Di Carlo & Luiz Alves)",
-                          "sedenta (feat. VHOOR) - Single (by Mayi)",
-                          "Pros Nossos (feat. fleezus & VHOOR) - Single (by Well)",
-                          "Delírios - Single (by FBC, VHOOR & Djair Voz Cristalina)",
-                          "Muita Fé (feat. Vhoor) - Single (by Well)",
-                          "MPBEATS - EP (by VHOOR)",
-                          "Outro Rolê (by FBC & VHOOR)",
-                          "Minha Vida - Single (by Mac Júlia & VHOOR)",
-                          "Capoeira - Single (by VHOOR)"]
+    var albums = [Album]()
+    var timer: Timer?
     
     
     override func viewDidLoad() {
@@ -75,25 +57,47 @@ class AlbumsCollectionViewController: UICollectionViewController {
             if self.collectionView.indexPathsForSelectedItems != nil {
                 let albumInfoVC = segue.destination as! AlbumInfoViewController
                 if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-                    albumInfoVC.albumName = imageNameArray[indexPath.row]
+                    let album = albums[indexPath.row]
+                    albumInfoVC.album = album
                 }
             }
         }
     }
     
+    
+    private func fetchAlbums(albumName: String) {
+        
+        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
+        
+        NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
+            if error == nil {
+                guard let albumModel = albumModel else { return }
+                self?.albums = albumModel.results
+                print(self?.albums)
+                self?.collectionView.reloadData()
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
+    }
+    
+    
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNameArray.count
+        return albums.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCoverCollectionViewCell
-        cell.albumCoverImageView.image = UIImage(named: imageNameArray[indexPath.row])
+        let album = albums[indexPath.row]
+        cell.confrigureAlbumCell(album: album)
         return cell
     }
 
+    
     // MARK: UICollectionViewDelegate
 
     
@@ -104,7 +108,14 @@ class AlbumsCollectionViewController: UICollectionViewController {
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        print(searchText)
+        if searchText != "" {
+            
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+                let search = searchText.split(separator: " ").joined(separator: "%20")
+                self?.fetchAlbums(albumName: search)
+            })
+        }
     }
 }
 

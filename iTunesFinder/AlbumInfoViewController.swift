@@ -8,34 +8,48 @@
 import UIKit
 
 class AlbumInfoViewController: UIViewController {
-
+    
+    var album: Album?
     
     @IBOutlet weak var albumCoverImage: UIImageView!
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var tracksNumerLabel: UILabel!
-    
-    var albumName = ""
-    
+    @IBOutlet weak var tracksNumberLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        albumCoverImage.image = UIImage(named: albumName)
-        albumNameLabel.text = albumName
         albumNameLabel.numberOfLines = 0
-        
+        artistNameLabel.numberOfLines = 0
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        confrigureAlbumCell()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func confrigureAlbumCell() {
+        guard let album = album else { return }
+        self.albumNameLabel.text = album.collectionName
+        self.artistNameLabel.text = album.artistName
+        self.yearLabel.text = album.releaseDate
+        self.tracksNumberLabel.text = "\(album.trackCount)"
+        
+        if let urlString = album.artworkUrl100 {
+            NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self?.albumCoverImage.image = image
+                case .failure(let error):
+                    self?.albumCoverImage.image = nil
+                    print("Album logo is not available" + error.localizedDescription)
+                }
+            }
+        } else {
+            self.albumCoverImage.image = nil
+        }
     }
-    */
-
 }
