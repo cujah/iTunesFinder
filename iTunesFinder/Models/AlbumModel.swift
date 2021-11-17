@@ -10,10 +10,6 @@ import Foundation
 
 struct AlbumModel: Codable, Equatable {
     let results: [Album]
- 
-    
-    
-    
 }
 
 struct Album: Codable, Equatable {

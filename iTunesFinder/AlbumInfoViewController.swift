@@ -80,7 +80,7 @@ class AlbumInfoViewController: UIViewController {
                 self?.tableView.reloadData()
             } else {
                 print(error!.localizedDescription)
-                // self?.alertOk(title: "Error", error!.localizedDescription)
+                self?.alertOk(title: "Error", message: "Failed to load data")
             }
         }
     }
