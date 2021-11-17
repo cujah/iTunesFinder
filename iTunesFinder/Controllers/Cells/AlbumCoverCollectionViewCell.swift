@@ -11,9 +11,14 @@ class AlbumCoverCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var albumCoverImageView: UIImageView!
+    @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
     
     func confrigureAlbumCell(album: Album?) {
         guard let album = album else { return }
+        albumLabel.text = album.collectionName
+        artistLabel.text = album.artistName
+        
         if let urlString = album.artworkUrl100 {
             
             NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
