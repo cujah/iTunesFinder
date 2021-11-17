@@ -88,13 +88,7 @@
 				0952428727439E3300AB4217 /* SceneDelegate.swift */,
 				095242A62743E0EB00AB4217 /* Models */,
 				095242A72743E0F800AB4217 /* Network */,
-				0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */,
-				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
-				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
-				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
-				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
-				095242B627456EF800AB4217 /* Alerts.swift */,
-				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
+				095242B827458F0400AB4217 /* Controllers */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
 				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
@@ -120,6 +114,28 @@
 				095242A82743E11900AB4217 /* NetworkDataFetch.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		095242B827458F0400AB4217 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				095242B927458F1E00AB4217 /* Cells */,
+				0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */,
+				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
+				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
+				095242B627456EF800AB4217 /* Alerts.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		095242B927458F1E00AB4217 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
+				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
+				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
