@@ -21,6 +21,8 @@
 		095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A82743E11900AB4217 /* NetworkDataFetch.swift */; };
 		095242AB27442F2300AB4217 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AA27442F2200AB4217 /* SongsModel.swift */; };
 		095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* TrackTableViewCell.swift */; };
+		095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AE2744F97200AB4217 /* HistoryTableViewController.swift */; };
+		095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B02744F99000AB4217 /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		095242A82743E11900AB4217 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		095242AA27442F2200AB4217 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
 		095242AC2744449F00AB4217 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		095242AE2744F97200AB4217 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		095242B02744F99000AB4217 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
 				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
 				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
+				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
+				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
 				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
@@ -180,12 +186,14 @@
 			files = (
 				095242AB27442F2300AB4217 /* SongsModel.swift in Sources */,
 				095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */,
+				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
+				095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */,
 				0952428827439E3300AB4217 /* SceneDelegate.swift in Sources */,
 				0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */,
 				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,

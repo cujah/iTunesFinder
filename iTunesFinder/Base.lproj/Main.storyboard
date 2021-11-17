@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yeG-sd-dnc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbL-gA-xom">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -53,11 +53,12 @@
                             <outlet property="delegate" destination="GM4-zt-B0y" id="2gz-qu-O8R"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" id="7gj-TF-8Fs"/>
                     <navigationItem key="navigationItem" title="iTunesFinder" largeTitleDisplayMode="always" id="esW-eC-MB9"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="570" y="51"/>
+            <point key="canvasLocation" x="1336" y="-208"/>
         </scene>
         <!--Album Info-->
         <scene sceneID="TAv-en-CBm">
@@ -138,7 +139,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jb7-bZ-bV4">
-                                <rect key="frame" x="0.0" y="276" width="414" height="620"/>
+                                <rect key="frame" x="0.0" y="276" width="414" height="537"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackId" id="90g-QH-G3v" customClass="TrackTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
@@ -189,11 +190,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Zhl-oQ-NOG" firstAttribute="leading" secondItem="V4p-Q4-g6T" secondAttribute="leading" constant="20" id="42L-L6-b8t"/>
-                            <constraint firstAttribute="bottom" secondItem="jb7-bZ-bV4" secondAttribute="bottom" id="4zV-Fz-9qc"/>
                             <constraint firstItem="ZqM-du-UOa" firstAttribute="leading" secondItem="Zhl-oQ-NOG" secondAttribute="trailing" id="6HZ-FU-MVf"/>
                             <constraint firstItem="Zhl-oQ-NOG" firstAttribute="top" secondItem="tNS-N5-7GO" secondAttribute="bottom" constant="4" id="8ny-JD-iD2"/>
                             <constraint firstItem="D9j-ru-EkQ" firstAttribute="top" secondItem="k1W-U4-xAj" secondAttribute="bottom" constant="8" symbolic="YES" id="A5h-Lo-HS6"/>
                             <constraint firstItem="LuZ-0M-qEH" firstAttribute="leading" secondItem="k1W-U4-xAj" secondAttribute="trailing" constant="28" id="AJo-5m-xWR"/>
+                            <constraint firstItem="jb7-bZ-bV4" firstAttribute="bottom" secondItem="V4p-Q4-g6T" secondAttribute="bottom" id="Cet-hg-vfC"/>
                             <constraint firstItem="ZqM-du-UOa" firstAttribute="top" secondItem="tNS-N5-7GO" secondAttribute="bottom" constant="4" id="FAo-Oy-uNh"/>
                             <constraint firstItem="LuZ-0M-qEH" firstAttribute="top" secondItem="Xin-1j-eU9" secondAttribute="bottom" constant="8" symbolic="YES" id="FCM-mi-Omv"/>
                             <constraint firstItem="tNS-N5-7GO" firstAttribute="top" secondItem="k1W-U4-xAj" secondAttribute="bottom" constant="8" symbolic="YES" id="FnW-Cn-IiX"/>
@@ -229,12 +230,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-s7-1ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1276.8115942028987" y="50.892857142857139"/>
+            <point key="canvasLocation" x="2047.826086956522" y="-208.25892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Ne-Dn-zSy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yeG-sd-dnc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="1QY-Ok-pm9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zDH-Ll-0DG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -242,12 +244,60 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GM4-zt-B0y" kind="relationship" relationship="rootViewController" id="AIG-Nv-09n"/>
+                        <segue destination="GM4-zt-B0y" kind="relationship" relationship="rootViewController" id="Est-fw-SPJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERt-qd-3He" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157.97101449275362" y="50.892857142857139"/>
+            <point key="canvasLocation" x="651" y="-208"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AI1-vL-mAd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dbL-gA-xom" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rcV-D4-8Oc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0d5-QE-N3k">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yeG-sd-dnc" kind="relationship" relationship="viewControllers" id="ZXp-gV-BCm"/>
+                        <segue destination="Vyl-iO-NDh" kind="relationship" relationship="viewControllers" id="D3q-aN-qUI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cq-gZ-llK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="121"/>
+        </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="LXU-xV-tpW">
+            <objects>
+                <tableViewController id="Vyl-iO-NDh" customClass="HistoryTableViewController" customModule="iTunesFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="WzX-cd-Tuy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="DG5-yj-mdb" customClass="HistoryTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DG5-yj-mdb" id="WYv-k5-kzv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Vyl-iO-NDh" id="2A6-tg-LRv"/>
+                            <outlet property="delegate" destination="Vyl-iO-NDh" id="btN-W3-CNG"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="svb-d4-faY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QD3-li-nj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="473"/>
         </scene>
     </scenes>
     <resources>
