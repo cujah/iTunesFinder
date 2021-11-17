@@ -25,6 +25,7 @@
 		095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B02744F99000AB4217 /* HistoryTableViewCell.swift */; };
 		095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */; };
 		095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */; };
+		095242B727456EFA00AB4217 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B627456EF800AB4217 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		095242B02744F99000AB4217 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
 		095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		095242B627456EF800AB4217 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
 				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
 				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
+				095242B627456EF800AB4217 /* Alerts.swift */,
 				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
@@ -195,6 +198,7 @@
 				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
+				095242B727456EFA00AB4217 /* Alerts.swift in Sources */,
 				095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,

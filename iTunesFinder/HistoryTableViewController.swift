@@ -25,7 +25,7 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupTableView()
-                
+        
     }
 
     private func setupTableView() {
@@ -34,8 +34,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     private func getSearchRequestsHistory() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
+        let context = getContext()
         
         let fetchReqest: NSFetchRequest<SearchRequest> = SearchRequest.fetchRequest()
         do {
@@ -46,6 +45,33 @@ class HistoryTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func clearHistoryButtonPressed(_ sender: Any) {
+        alertOkCancel(title: "Clear the history?", message: "Press OK to clear the search history.") {
+            self.clearHistory()
+        }
+    }
+    
+    
+    private func clearHistory() {
+        let context = getContext()
+        let fetchReqest: NSFetchRequest<SearchRequest> = SearchRequest.fetchRequest()
+        if let requests = try? context.fetch(fetchReqest) {
+            for request in requests {
+                context.delete(request)
+            }
+        }
+        do {
+            try context.save()
+            self.tableView.reloadData()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    private func getContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
     
     // MARK: - Table view data source
 

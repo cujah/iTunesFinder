@@ -58,7 +58,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2317" y="121"/>
+            <point key="canvasLocation" x="1557" y="3"/>
         </scene>
         <!--Album Info-->
         <scene sceneID="TAv-en-CBm">
@@ -143,14 +143,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackId" id="90g-QH-G3v" customClass="TrackTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="90g-QH-G3v" id="LgX-aA-TOW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-dD-zeV">
-                                                    <rect key="frame" x="20" y="11" width="39" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="39" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="oMm-vJ-NH7"/>
                                                     </constraints>
@@ -159,7 +159,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Qr-zhP">
-                                                    <rect key="frame" x="67" y="11" width="327" height="21"/>
+                                                    <rect key="frame" x="67" y="11" width="327" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="Lj5-HZ-ris"/>
                                                     </constraints>
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-s7-1ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3064" y="121"/>
+            <point key="canvasLocation" x="2338" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Ne-Dn-zSy">
@@ -250,7 +250,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERt-qd-3He" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="121"/>
+            <point key="canvasLocation" x="16" y="-14"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AI1-vL-mAd">
@@ -269,7 +269,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cq-gZ-llK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-959" y="121"/>
+            <point key="canvasLocation" x="-964" y="324"/>
         </scene>
         <!--History Table View Controller-->
         <scene sceneID="LXU-xV-tpW">
@@ -281,14 +281,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="DG5-yj-mdb" customClass="HistoryTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DG5-yj-mdb" id="WYv-k5-kzv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATH-oG-HcM">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -312,11 +312,17 @@
                             <outlet property="delegate" destination="Vyl-iO-NDh" id="btN-W3-CNG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="v3t-OS-Ioo"/>
+                    <navigationItem key="navigationItem" id="v3t-OS-Ioo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="bAq-Zh-lBq">
+                            <connections>
+                                <action selector="clearHistoryButtonPressed:" destination="Vyl-iO-NDh" id="2Xr-za-CWU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QD3-li-nj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="688"/>
+            <point key="canvasLocation" x="786" y="688"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kFY-JP-bv3">
