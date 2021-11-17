@@ -9,15 +9,11 @@ import Foundation
 
 
 struct SongsModel: Codable {
-    
     let results: [Song]
-    
 }
 
 
 struct Song: Codable {
-    
+    let trackNumber: Int?
     let trackName: String?
-    
-    
 }

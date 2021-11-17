@@ -7,6 +7,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "trackId"
+
 class AlbumInfoViewController: UIViewController {
     
     var album: Album?
@@ -22,7 +24,6 @@ class AlbumInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         confrigureAlbumInfo()
         fetchSong(album: album)
         setupDelegate()
@@ -35,9 +36,6 @@ class AlbumInfoViewController: UIViewController {
     
     
     private func confrigureAlbumInfo() {
-//        albumNameLabel.numberOfLines = 0
-//        artistNameLabel.numberOfLines = 0
-        
         guard let album = album else { return }
         albumNameLabel.text = album.collectionName
         artistNameLabel.text = album.artistName
@@ -71,20 +69,21 @@ class AlbumInfoViewController: UIViewController {
             if error == nil {
                 guard let songModel = songModel else { return }
                 self?.songs = songModel.results
+                if self?.songs.first?.trackNumber == nil {
+                    self?.songs.removeFirst()
+                }
                 self?.tableView.reloadData()
             } else {
                 print(error!.localizedDescription)
                 // self?.alertOk(title: "Error", error!.localizedDescription)
             }
         }
-        
     }
     
     private func setDateFormat(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
         guard let backendDate = dateFormatter.date(from: date) else { return "" }
-        
         let formatDate = DateFormatter()
         formatDate.dateFormat = "dd.MM.yyyy"
         let date = formatDate.string(from: backendDate)
@@ -92,7 +91,7 @@ class AlbumInfoViewController: UIViewController {
     }
 }
 
-// MARK: - Table view data source
+// MARK: - Table view delegate & data source
 
 extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -102,10 +101,10 @@ extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trackId", for: indexPath) as! TrackTableViewCell
-        let song = songs[indexPath.row].trackName
-        cell.trackNumberLabel.text = "\(indexPath.row)"
-        cell.trackNameLabel.text = song
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TrackTableViewCell
+        let song = songs[indexPath.row]
+        cell.trackNumberLabel.text = "\(song.trackNumber!)"
+        cell.trackNameLabel.text = song.trackName
         return cell
     }
     
