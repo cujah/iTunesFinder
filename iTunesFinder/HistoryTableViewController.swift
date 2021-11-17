@@ -65,7 +65,24 @@ class HistoryTableViewController: UITableViewController {
 
         return historyCell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "historyRequestSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                  let dvc = segue.destination as? AlbumsCollectionViewController,
+                  let searchRequest = history[indexPath.row].searchRequest else { return }
+            dvc.historyRequest = searchRequest
+            
+        }
+    }
+    
+    
 }
 
 

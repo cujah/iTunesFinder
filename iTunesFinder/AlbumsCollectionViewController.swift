@@ -18,7 +18,13 @@ class AlbumsCollectionViewController: UICollectionViewController {
     
     var albums = [Album]()
     var timer: Timer?
-    
+    var historyRequest: String? {
+        didSet {
+            if let request = historyRequest {
+                fetchAlbums(albumName: request)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +42,6 @@ class AlbumsCollectionViewController: UICollectionViewController {
     private func setupDelegate() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         searchController.searchBar.delegate = self
     }
     
@@ -48,7 +53,6 @@ class AlbumsCollectionViewController: UICollectionViewController {
     private func setupNavigationBar() {
         navigationItem.title = "Albums"
         navigationItem.searchController = searchController
-        
     }
     
     
@@ -112,8 +116,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
     }
     
     
-
-    // MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return albums.count
@@ -125,24 +128,20 @@ class AlbumsCollectionViewController: UICollectionViewController {
         cell.confrigureAlbumCell(album: album)
         return cell
     }
-    
 }
+
 
 // MARK: UISearchBar Delegate
 
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         let searchTextRequest = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        
         if searchTextRequest != "" {
-            
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
                 let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
                 self?.fetchAlbums(albumName: search)
                 let requestForSaving = search.replacingOccurrences(of: "%20", with: " ")
-                
                 self?.saveSearchRequest(withRequest: requestForSaving)
             })
         }

@@ -58,7 +58,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336" y="-208"/>
+            <point key="canvasLocation" x="2317" y="121"/>
         </scene>
         <!--Album Info-->
         <scene sceneID="TAv-en-CBm">
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-s7-1ZX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2047.826086956522" y="-208.25892857142856"/>
+            <point key="canvasLocation" x="3064" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Ne-Dn-zSy">
@@ -238,6 +238,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yeG-sd-dnc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="1QY-Ok-pm9"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="1G0-3j-rOu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zDH-Ll-0DG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -249,7 +250,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERt-qd-3He" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="-208"/>
+            <point key="canvasLocation" x="1578" y="121"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AI1-vL-mAd">
@@ -268,7 +269,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cq-gZ-llK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362" y="121"/>
+            <point key="canvasLocation" x="-959" y="121"/>
         </scene>
         <!--History Table View Controller-->
         <scene sceneID="LXU-xV-tpW">
@@ -280,14 +281,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="DG5-yj-mdb" customClass="HistoryTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DG5-yj-mdb" id="WYv-k5-kzv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATH-oG-HcM">
-                                            <rect key="frame" x="20" y="11" width="374" height="21.5"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -302,6 +303,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="historyRequestLabel" destination="ATH-oG-HcM" id="yNy-Z6-yZE"/>
+                                    <segue destination="GM4-zt-B0y" kind="show" identifier="historyRequestSegue" id="fQ5-kb-LxC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -314,7 +316,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QD3-li-nj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1334.7826086956522" y="471.42857142857139"/>
+            <point key="canvasLocation" x="735" y="688"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kFY-JP-bv3">
@@ -333,9 +335,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sG4-F7-48c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="472"/>
+            <point key="canvasLocation" x="16" y="688"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fQ5-kb-LxC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
