@@ -27,11 +27,16 @@ class AlbumInfoViewController: UIViewController {
         confrigureAlbumInfo()
         fetchSong(album: album)
         setupDelegate()
+        setupTableView()
     }
     
     private func setupDelegate() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    private func setupTableView(){
+        tableView.showsVerticalScrollIndicator = false
     }
     
     

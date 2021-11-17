@@ -26,6 +26,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
         setupDelegate()
         setupNavigationBar()
         setupSearhController()
+        setupCollectionView()
         
     }
 
@@ -37,6 +38,10 @@ class AlbumsCollectionViewController: UICollectionViewController {
         collectionView.dataSource = self
         
         searchController.searchBar.delegate = self
+    }
+    
+    private func setupCollectionView() {
+        collectionView.showsVerticalScrollIndicator = false
     }
     
     
@@ -105,10 +110,6 @@ class AlbumsCollectionViewController: UICollectionViewController {
         cell.confrigureAlbumCell(album: album)
         return cell
     }
-
-    
-    // MARK: UICollectionViewDelegate
-
     
 }
 
