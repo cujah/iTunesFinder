@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 
 private let reuseIdentifier = "albumCoverCell"
@@ -55,6 +55,21 @@ class AlbumsCollectionViewController: UICollectionViewController {
     private func setupSearhController() {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
+    }
+    
+    private func saveSearchRequest(withRequest request: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "SearchRequest", in: context) else { return }
+        let searchRequestObject = SearchRequest(entity: entity, insertInto: context)
+        searchRequestObject.searchRequest = request
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     
@@ -126,6 +141,9 @@ extension AlbumsCollectionViewController: UISearchBarDelegate {
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
                 let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
                 self?.fetchAlbums(albumName: search)
+                let requestForSaving = search.replacingOccurrences(of: "%20", with: " ")
+                
+                self?.saveSearchRequest(withRequest: requestForSaving)
             })
         }
     }
