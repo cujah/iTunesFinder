@@ -11,7 +11,10 @@ private let reuseIdentifier = "trackId"
 
 class AlbumInfoViewController: UIViewController {
     
-    var album: Album?
+    var viewModel: AlbumInfoViewModelType?
+    private let defaultImage = UIImage(named: "defaultCover")
+    
+    //var album: Album?
     var songs = [Song]()
     
     @IBOutlet weak var albumCoverImage: UIImageView!
@@ -25,7 +28,7 @@ class AlbumInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         confrigureAlbumInfo()
-        fetchSong(album: album)
+        fetchSong(collectionId: viewModel?.collectionId)
         setupDelegate()
         setupTableView()
     }
@@ -41,33 +44,31 @@ class AlbumInfoViewController: UIViewController {
     
     
     private func confrigureAlbumInfo() {
-        guard let album = album else { return }
-        albumNameLabel.text = album.collectionName
-        artistNameLabel.text = album.artistName
-        yearLabel.text = setDateFormat(date: album.releaseDate)
-        tracksNumberLabel.text = "\(album.trackCount)"
-        genreLable.text = album.primaryGenreName
+        guard let viewModel = viewModel else { return }
+        albumNameLabel.text = viewModel.albumName
+        artistNameLabel.text = viewModel.artistName
+        yearLabel.text = setDateFormat(date: viewModel.releaseDate)
+        tracksNumberLabel.text = "\(viewModel.tracksCount)"
+        genreLable.text = viewModel.genre
         
-        if let urlString = album.artworkUrl100 {
+        if let urlString = viewModel.albumCoverUlr {
             NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
                 switch result {
                 case .success(let data):
                     let image = UIImage(data: data)
                     self?.albumCoverImage.image = image
                 case .failure(let error):
-                    self?.albumCoverImage.image = nil
+                    self?.albumCoverImage.image = self?.defaultImage
                     print("Album logo is not available" + error.localizedDescription)
                 }
             }
         } else {
-            self.albumCoverImage.image = nil
+            self.albumCoverImage.image = self.defaultImage
         }
     }
     
-    private func fetchSong(album: Album?) {
-        guard let album = album else { return }
-        
-        let idAlbum = album.collectionId
+    private func fetchSong(collectionId: Int?) {
+        guard let idAlbum = collectionId else { return }
         let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
         
         NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songModel, error in

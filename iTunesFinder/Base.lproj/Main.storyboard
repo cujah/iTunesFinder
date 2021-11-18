@@ -68,7 +68,6 @@
                                     <outlet property="albumCoverImageView" destination="GhK-yT-c2f" id="M9B-6S-Jai"/>
                                     <outlet property="albumLabel" destination="ecI-U4-fAY" id="w3k-1K-stU"/>
                                     <outlet property="artistLabel" destination="h6h-q6-s6q" id="jdB-v7-5ek"/>
-                                    <segue destination="FJp-jI-NSy" kind="show" identifier="showAlbumInfoSegue" id="ZSK-2H-x3b"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -79,6 +78,9 @@
                     </collectionView>
                     <tabBarItem key="tabBarItem" id="7gj-TF-8Fs"/>
                     <navigationItem key="navigationItem" title="iTunesFinder" largeTitleDisplayMode="always" id="esW-eC-MB9"/>
+                    <connections>
+                        <segue destination="FJp-jI-NSy" kind="show" identifier="showAlbumInfoSegue" id="LgL-XD-vpq"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,14 +169,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackId" id="90g-QH-G3v" customClass="TrackTableViewCell" customModule="iTunesFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="90g-QH-G3v" id="LgX-aA-TOW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-dD-zeV">
-                                                    <rect key="frame" x="20" y="11" width="39" height="21.5"/>
+                                                    <rect key="frame" x="20" y="11" width="39" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="39" id="oMm-vJ-NH7"/>
                                                     </constraints>
@@ -183,7 +185,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOH-Qr-zhP">
-                                                    <rect key="frame" x="67" y="11" width="327" height="21"/>
+                                                    <rect key="frame" x="67" y="11" width="327" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="327" id="Lj5-HZ-ris"/>
                                                     </constraints>
@@ -370,7 +372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fQ5-kb-LxC"/>
+        <segue reference="Est-fw-SPJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

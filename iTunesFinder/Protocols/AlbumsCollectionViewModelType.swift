@@ -8,7 +8,13 @@
 import Foundation
 
 
-protocol AlbumsCollectionViewModelType {
-    var numberOfItemsInSection: Int { get }
+protocol AlbumsCollectionViewViewModelType {
+    func numberOfItemsInSection() -> Int
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> AlbumsCollectionCellViewModelType?
+    
+    func viewModelForSelectedItem() -> AlbumInfoViewModelType?
+    func selectItem(forIndexPath indexPath: IndexPath)
+    
+    // временно:
     var albums: [Album] { get set }
 }

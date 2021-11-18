@@ -28,6 +28,10 @@
 		095242B727456EFA00AB4217 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B627456EF800AB4217 /* Alerts.swift */; };
 		095242BB274647C200AB4217 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BA274647C200AB4217 /* ViewModel.swift */; };
 		095242BE2746493600AB4217 /* AlbumsCollectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */; };
+		095242C12746571600AB4217 /* AlbumsCollectionCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */; };
+		095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */; };
+		095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */; };
+		095242C7274685C000AB4217 /* AlbumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		095242B627456EF800AB4217 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		095242BA274647C200AB4217 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewModelType.swift; sourceTree = "<group>"; };
+		095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionCellViewModelType.swift; sourceTree = "<group>"; };
+		095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModelType.swift; sourceTree = "<group>"; };
+		095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				095242BA274647C200AB4217 /* ViewModel.swift */,
+				095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */,
+				095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -156,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */,
+				095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */,
+				095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -236,11 +248,14 @@
 				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
+				095242C7274685C000AB4217 /* AlbumInfoViewModel.swift in Sources */,
 				095242B727456EFA00AB4217 /* Alerts.swift in Sources */,
 				095242BB274647C200AB4217 /* ViewModel.swift in Sources */,
 				095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
+				095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
+				095242C12746571600AB4217 /* AlbumsCollectionCellViewModelType.swift in Sources */,
 				095242BE2746493600AB4217 /* AlbumsCollectionViewModelType.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
@@ -248,6 +263,7 @@
 				0952428827439E3300AB4217 /* SceneDelegate.swift in Sources */,
 				0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */,
 				095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */,
+				095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */,
 				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

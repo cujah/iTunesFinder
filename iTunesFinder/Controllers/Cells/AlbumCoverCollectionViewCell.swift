@@ -9,31 +9,33 @@ import UIKit
 
 class AlbumCoverCollectionViewCell: UICollectionViewCell {
     
+    private let defaultImage = UIImage(named: "defaultCover")
     
     @IBOutlet weak var albumCoverImageView: UIImageView!
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
-    func confrigureAlbumCell(album: Album?) {
-        guard let album = album else { return }
-        albumLabel.text = album.collectionName
-        artistLabel.text = album.artistName
-        
-        if let urlString = album.artworkUrl100 {
+    
+    weak var viewModel: AlbumsCollectionCellViewModelType? {
+        willSet(viewModel) {
+            guard let viewModel = viewModel else { return }
+            albumLabel.text = viewModel.albumName
+            artistLabel.text = viewModel.artistName
             
-            NetworkRequest.shared.requestData(urlString: urlString) { [weak self] result in
-                switch result {
-                case .success(let data):
-                    let image = UIImage(data: data)
-                    self?.albumCoverImageView.image = image
-                case .failure(let error):
-                    self?.albumCoverImageView.image = nil
-                    print("Album logo is not available" + error.localizedDescription)
+            if let urlImage = viewModel.albumCoverImageUrl {
+                NetworkRequest.shared.requestData(urlString: urlImage) { [weak self] result in
+                    switch result {
+                    case .success(let data):
+                        let image = UIImage(data: data)
+                        self?.albumCoverImageView.image = image
+                    case .failure(let error):
+                        self?.albumCoverImageView.image = self?.defaultImage
+                        print("Album logo is not available" + error.localizedDescription)
+                    }
                 }
+            } else {
+                self.albumCoverImageView.image = defaultImage
             }
-        } else {
-            self.albumCoverImageView.image = nil
         }
     }
-    
 }

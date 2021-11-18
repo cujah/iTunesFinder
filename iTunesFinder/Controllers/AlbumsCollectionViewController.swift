@@ -12,12 +12,10 @@ import CoreData
 private let reuseIdentifier = "albumCoverCell"
 
 class AlbumsCollectionViewController: UICollectionViewController {
-
-    var viewModel: AlbumsCollectionViewModelType?
+    
+    var viewModel: AlbumsCollectionViewViewModelType?
     
     private let searchController = UISearchController(searchResultsController: nil)
-    
-    
     
     var timer: Timer?
     var historyRequest: String? {
@@ -27,6 +25,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,14 +80,17 @@ class AlbumsCollectionViewController: UICollectionViewController {
     }
     
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+        viewModel.selectItem(forIndexPath: indexPath)
+        performSegue(withIdentifier: "showAlbumInfoSegue", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showAlbumInfoSegue" {
-            if self.collectionView.indexPathsForSelectedItems != nil {
-                let albumInfoVC = segue.destination as! AlbumInfoViewController
-                if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-                    let album = viewModel?.albums[indexPath.row]
-                    albumInfoVC.album = album
-                }
+        guard let identifier = segue.identifier, let viewModel = viewModel else { return }
+        if identifier == "showAlbumInfoSegue" {
+            if let dvc = segue.destination as? AlbumInfoViewController {
+                dvc.viewModel = viewModel.viewModelForSelectedItem()
             }
         }
     }
@@ -116,14 +118,14 @@ class AlbumsCollectionViewController: UICollectionViewController {
 // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel?.numberOfItemsInSection ?? 0
+        return viewModel?.numberOfItemsInSection() ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AlbumCoverCollectionViewCell
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
-        let album = viewModel.albums[indexPath.row]
-        collectionViewCell.confrigureAlbumCell(album: album)
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        collectionViewCell.viewModel = cellViewModel
         return collectionViewCell
     }
 }
