@@ -19,7 +19,7 @@ extension UIViewController {
     
     func alertOkCancel(title: String, message: String, completion: @escaping () -> () ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { ok in completion() }
+        let ok = UIAlertAction(title: "OK", style: .default) { _ in completion() }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)

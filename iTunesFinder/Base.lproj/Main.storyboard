@@ -82,7 +82,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWc-cJ-tFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556.521739130435" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="1643" y="3"/>
         </scene>
         <!--Album Info-->
         <scene sceneID="TAv-en-CBm">

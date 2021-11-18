@@ -106,7 +106,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
                     self?.albums = sortedAlbums
                     self?.collectionView.reloadData()
                 } else {
-                    self?.alertOk(title: "Not found =(", message: "Album not found. Add some words")
+                    self?.alertOk(title: "Not found =(", message: "Album not found, try another words.")
                 }
             } else {
                 print(error!.localizedDescription)
