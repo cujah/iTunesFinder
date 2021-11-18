@@ -13,21 +13,25 @@ private let reuseIdentifier = "albumCoverCell"
 
 class AlbumsCollectionViewController: UICollectionViewController {
 
+    var viewModel: AlbumsCollectionViewModelType?
+    
     private let searchController = UISearchController(searchResultsController: nil)
     
     
-    var albums = [Album]()
+    
     var timer: Timer?
     var historyRequest: String? {
         didSet {
             if let request = historyRequest {
-                fetchAlbums(albumName: request)
+                self.fetchAlbums(albumName: request)
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = ViewModel()
 
         setupDelegate()
         setupNavigationBar()
@@ -82,28 +86,23 @@ class AlbumsCollectionViewController: UICollectionViewController {
             if self.collectionView.indexPathsForSelectedItems != nil {
                 let albumInfoVC = segue.destination as! AlbumInfoViewController
                 if let indexPath = collectionView?.indexPathsForSelectedItems?.first {
-                    let album = albums[indexPath.row]
+                    let album = viewModel?.albums[indexPath.row]
                     albumInfoVC.album = album
                 }
             }
         }
     }
     
-    
     private func fetchAlbums(albumName: String) {
-        
         let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
-        
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
             if error == nil {
-                
                 guard let albumModel = albumModel else { return }
-                
                 if albumModel.results != [] {
                     let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
                         return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
                     }
-                    self?.albums = sortedAlbums
+                    self?.viewModel?.albums = sortedAlbums
                     self?.collectionView.reloadData()
                 } else {
                     self?.alertOk(title: "Not found =(", message: "Album not found, try another words.")
@@ -112,21 +111,20 @@ class AlbumsCollectionViewController: UICollectionViewController {
                 print(error!.localizedDescription)
             }
         }
-        
     }
-    
     
 // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albums.count
+        return viewModel?.numberOfItemsInSection ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AlbumCoverCollectionViewCell
-        let album = albums[indexPath.row]
-        cell.confrigureAlbumCell(album: album)
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AlbumCoverCollectionViewCell
+        guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
+        let album = viewModel.albums[indexPath.row]
+        collectionViewCell.confrigureAlbumCell(album: album)
+        return collectionViewCell
     }
 }
 

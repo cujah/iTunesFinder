@@ -26,6 +26,8 @@
 		095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */; };
 		095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */; };
 		095242B727456EFA00AB4217 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B627456EF800AB4217 /* Alerts.swift */; };
+		095242BB274647C200AB4217 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BA274647C200AB4217 /* ViewModel.swift */; };
+		095242BE2746493600AB4217 /* AlbumsCollectionViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
 		095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		095242B627456EF800AB4217 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		095242BA274647C200AB4217 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				0952428527439E3300AB4217 /* AppDelegate.swift */,
 				0952428727439E3300AB4217 /* SceneDelegate.swift */,
+				095242BF2746493A00AB4217 /* Protocols */,
+				095242BC274647D700AB4217 /* ViewModel */,
 				095242A62743E0EB00AB4217 /* Models */,
 				095242A72743E0F800AB4217 /* Network */,
 				095242B827458F0400AB4217 /* Controllers */,
@@ -136,6 +142,22 @@
 				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		095242BC274647D700AB4217 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				095242BA274647C200AB4217 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		095242BF2746493A00AB4217 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +237,11 @@
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
 				095242B727456EFA00AB4217 /* Alerts.swift in Sources */,
+				095242BB274647C200AB4217 /* ViewModel.swift in Sources */,
 				095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
+				095242BE2746493600AB4217 /* AlbumsCollectionViewModelType.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
 				095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */,
