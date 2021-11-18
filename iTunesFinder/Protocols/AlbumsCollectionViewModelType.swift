@@ -18,8 +18,3 @@ protocol AlbumsCollectionViewViewModelType {
     // временно:
     var albums: [Album] { get set }
 }
-
-
-
-
-/// тест

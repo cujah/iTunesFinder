@@ -14,7 +14,6 @@ class AlbumInfoViewController: UIViewController {
     var viewModel: AlbumInfoViewModelType?
     private let defaultImage = UIImage(named: "defaultCover")
     
-    //var album: Album?
     var songs = [Song]()
     
     @IBOutlet weak var albumCoverImage: UIImageView!
@@ -28,7 +27,6 @@ class AlbumInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         confrigureAlbumInfo()
-        fetchSong(collectionId: viewModel?.collectionId)
         setupDelegate()
         setupTableView()
     }
@@ -65,12 +63,11 @@ class AlbumInfoViewController: UIViewController {
         } else {
             self.albumCoverImage.image = self.defaultImage
         }
+        fetchSong(idAlbum: viewModel.collectionId)
     }
     
-    private func fetchSong(collectionId: Int?) {
-        guard let idAlbum = collectionId else { return }
+    private func fetchSong(idAlbum: Int) {
         let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
-        
         NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songModel, error in
             if error == nil {
                 guard let songModel = songModel else { return }

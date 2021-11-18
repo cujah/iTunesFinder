@@ -32,6 +32,10 @@
 		095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */; };
 		095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */; };
 		095242C7274685C000AB4217 /* AlbumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */; };
+		095242C92746C7DE00AB4217 /* HistoryTableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */; };
+		095242CB2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */; };
+		095242CD2746C9E000AB4217 /* HistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */; };
+		095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +66,10 @@
 		095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModelType.swift; sourceTree = "<group>"; };
 		095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModel.swift; sourceTree = "<group>"; };
+		095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewViewModelType.swift; sourceTree = "<group>"; };
+		095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewModel.swift; sourceTree = "<group>"; };
+		095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,8 @@
 				095242BA274647C200AB4217 /* ViewModel.swift */,
 				095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */,
 				095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */,
+				095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */,
+				095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +178,8 @@
 				095242BD2746493600AB4217 /* AlbumsCollectionViewModelType.swift */,
 				095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */,
 				095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */,
+				095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */,
+				095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				095242AB27442F2300AB4217 /* SongsModel.swift in Sources */,
+				095242CD2746C9E000AB4217 /* HistoryTableViewModel.swift in Sources */,
 				095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */,
 				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
@@ -256,6 +269,7 @@
 				095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
 				095242C12746571600AB4217 /* AlbumsCollectionCellViewModelType.swift in Sources */,
+				095242CB2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift in Sources */,
 				095242BE2746493600AB4217 /* AlbumsCollectionViewModelType.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
@@ -264,6 +278,8 @@
 				0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */,
 				095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */,
 				095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */,
+				095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */,
+				095242C92746C7DE00AB4217 /* HistoryTableViewViewModelType.swift in Sources */,
 				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
