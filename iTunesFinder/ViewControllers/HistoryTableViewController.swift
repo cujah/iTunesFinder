@@ -15,23 +15,18 @@ class HistoryTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        viewModel = HistoryTableViewModel()
         viewModel?.getSearchRequestsHistory()
         tableView.reloadData()
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = HistoryTableViewModel()
         setupTableView()
-        
     }
 
     private func setupTableView() {
         self.title = "Search History"
-        tableView.showsVerticalScrollIndicator = false
     }
     
     @IBAction func clearHistoryButtonPressed(_ sender: Any) {

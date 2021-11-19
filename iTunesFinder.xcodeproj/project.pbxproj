@@ -114,7 +114,7 @@
 				095242BC274647D700AB4217 /* ViewModels */,
 				095242A62743E0EB00AB4217 /* Models */,
 				095242A72743E0F800AB4217 /* Network */,
-				095242B827458F0400AB4217 /* Controllers */,
+				095242B827458F0400AB4217 /* ViewControllers */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
 				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
@@ -142,7 +142,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		095242B827458F0400AB4217 /* Controllers */ = {
+		095242B827458F0400AB4217 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				095242B927458F1E00AB4217 /* Cells */,
@@ -151,7 +151,7 @@
 				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
 				095242B627456EF800AB4217 /* Alerts.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		095242B927458F1E00AB4217 /* Cells */ = {
