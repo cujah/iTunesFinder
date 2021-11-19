@@ -102,8 +102,11 @@ extension AlbumsCollectionViewController: UISearchBarDelegate {
                 let searchRequest = searchText
                 let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
                 viewModel.fetchAlbums(albumName: search, completion: { status in
-                    status ? self?.collectionView.reloadData() :
-                    self?.alertOk(title: "Album not found =(", message: "Album not found. Try another word")
+                    if status {
+                        self?.collectionView.reloadData()
+                    } else {
+                        self?.alertOk(title: "Album not found =(", message: "Album not found. Try another word")
+                    }
                 })
                 viewModel.saveSearchRequest(withRequest: searchRequest)
             })
