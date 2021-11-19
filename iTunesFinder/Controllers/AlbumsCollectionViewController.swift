@@ -73,8 +73,8 @@ class AlbumsCollectionViewController: UICollectionViewController {
         }
     }
     
-    
-// MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
+
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfItemsInSection() ?? 0
@@ -90,7 +90,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
 }
 
 
-// MARK: UISearchBar Delegate
+    // MARK: - UISearchBar Delegate
 
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

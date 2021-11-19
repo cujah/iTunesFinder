@@ -20,7 +20,7 @@
 		095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A42743DD4600AB4217 /* NetworkRequest.swift */; };
 		095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A82743E11900AB4217 /* NetworkDataFetch.swift */; };
 		095242AB27442F2300AB4217 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AA27442F2200AB4217 /* SongsModel.swift */; };
-		095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* TrackTableViewCell.swift */; };
+		095242AD2744449F00AB4217 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* SongTableViewCell.swift */; };
 		095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AE2744F97200AB4217 /* HistoryTableViewController.swift */; };
 		095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B02744F99000AB4217 /* HistoryTableViewCell.swift */; };
 		095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */; };
@@ -36,6 +36,8 @@
 		095242CB2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */; };
 		095242CD2746C9E000AB4217 /* HistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */; };
 		095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */; };
+		095242D12747D39D00AB4217 /* SongTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */; };
+		095242D32747D44400AB4217 /* SongTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +56,7 @@
 		095242A42743DD4600AB4217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		095242A82743E11900AB4217 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		095242AA27442F2200AB4217 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
-		095242AC2744449F00AB4217 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		095242AC2744449F00AB4217 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		095242AE2744F97200AB4217 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		095242B02744F99000AB4217 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewModel.swift; sourceTree = "<group>"; };
 		095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
-				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
+				095242AC2744449F00AB4217 /* SongTableViewCell.swift */,
 				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
 			);
 			path = Cells;
@@ -166,6 +170,7 @@
 				095242BA274647C200AB4217 /* AlbumsCollectionViewViewModel.swift */,
 				095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */,
 				095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */,
+				095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */,
 				095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */,
 				095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */,
 			);
@@ -178,6 +183,7 @@
 				095242BD2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift */,
 				095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */,
 				095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */,
+				095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */,
 				095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */,
 				095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */,
 			);
@@ -280,7 +286,9 @@
 				095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */,
 				095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */,
 				095242C92746C7DE00AB4217 /* HistoryTableViewViewModelType.swift in Sources */,
-				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,
+				095242D12747D39D00AB4217 /* SongTableViewCellViewModelType.swift in Sources */,
+				095242D32747D44400AB4217 /* SongTableViewCellViewModel.swift in Sources */,
+				095242AD2744449F00AB4217 /* SongTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

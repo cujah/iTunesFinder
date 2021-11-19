@@ -17,4 +17,9 @@ protocol AlbumInfoViewModelType {
     var tracksCount: Int { get }
     var genre: String { get }
     var collectionId: Int { get }
+    
+    func numberOfRowsInSection() -> Int
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> SongTableViewCellViewModelType?
+    
+    func fetchSong(idAlbum: Int, completion: @escaping (Bool) -> ())
 }

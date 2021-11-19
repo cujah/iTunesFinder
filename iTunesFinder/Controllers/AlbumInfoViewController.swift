@@ -14,8 +14,6 @@ class AlbumInfoViewController: UIViewController {
     var viewModel: AlbumInfoViewModelType?
     private let defaultImage = UIImage(named: "defaultCover")
     
-    var songs = [Song]()
-    
     @IBOutlet weak var albumCoverImage: UIImageView!
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
@@ -63,24 +61,14 @@ class AlbumInfoViewController: UIViewController {
         } else {
             self.albumCoverImage.image = self.defaultImage
         }
-        fetchSong(idAlbum: viewModel.collectionId)
-    }
-    
-    private func fetchSong(idAlbum: Int) {
-        let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
-        NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songModel, error in
-            if error == nil {
-                guard let songModel = songModel else { return }
-                self?.songs = songModel.results
-                if self?.songs.first?.trackNumber == nil {
-                    self?.songs.removeFirst()
-                }
-                self?.tableView.reloadData()
+        viewModel.fetchSong(idAlbum: viewModel.collectionId, completion: { status in
+            if status {
+                self.tableView.reloadData()
             } else {
-                print(error!.localizedDescription)
-                self?.alertOk(title: "Error", message: "Failed to load data")
+                self.alertOk(title: "Error", message: "Failed to load data")
             }
-        }
+        })
+        
     }
     
     private func setDateFormat(date: String) -> String {
@@ -100,15 +88,15 @@ extension AlbumInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        songs.count
+        viewModel?.numberOfRowsInSection() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TrackTableViewCell
-        let song = songs[indexPath.row]
-        cell.trackNumberLabel.text = "\(song.trackNumber!)"
-        cell.trackNameLabel.text = song.trackName
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? SongTableViewCell
+        guard let tableViewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
+        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        tableViewCell.viewModel = cellViewModel
+        return tableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

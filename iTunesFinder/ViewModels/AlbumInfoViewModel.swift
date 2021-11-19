@@ -9,8 +9,9 @@ import Foundation
 
 
 class AlbumInfoViewModel: AlbumInfoViewModelType {
-    
+
     private var album: Album
+    private var songs: [Song] = []
     
     init(album: Album) {
         self.album = album
@@ -44,8 +45,33 @@ class AlbumInfoViewModel: AlbumInfoViewModelType {
         return album.collectionId
     }
     
+    func numberOfRowsInSection() -> Int {
+        return songs.count
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> SongTableViewCellViewModelType? {
+        return SongTableViewCellViewModel(song: songs[indexPath.row])
+    }
     
     
+    func fetchSong(idAlbum: Int, completion: @escaping (Bool) -> ()) {
+        let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"
+        NetworkDataFetch.shared.fetchSongs(urlString: urlString) { [weak self] songModel, error in
+            if error == nil {
+                guard let songModel = songModel else { return }
+                self?.songs = songModel.results
+                if self?.songs.first?.trackNumber == nil {
+                    self?.songs.removeFirst()
+                }
+                completion(true) 
+            } else {
+                print(error!.localizedDescription)
+                completion(false)
+            }
+        }
+    }
+    
+
     
     
 }
