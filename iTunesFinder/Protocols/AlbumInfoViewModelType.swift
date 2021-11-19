@@ -20,6 +20,7 @@ protocol AlbumInfoViewModelType {
     
     func numberOfRowsInSection() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> SongTableViewCellViewModelType?
+    func setDateFormat(date: String) -> String
     
     func fetchSong(idAlbum: Int, completion: @escaping (Bool) -> ())
 }

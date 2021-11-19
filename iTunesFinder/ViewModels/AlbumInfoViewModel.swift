@@ -30,7 +30,8 @@ class AlbumInfoViewModel: AlbumInfoViewModelType {
     }
     
     var releaseDate: String {
-        return album.releaseDate
+        let releaseDate = setDateFormat(date: album.releaseDate)
+        return releaseDate
     }
     
     var tracksCount: Int {
@@ -53,6 +54,15 @@ class AlbumInfoViewModel: AlbumInfoViewModelType {
         return SongTableViewCellViewModel(song: songs[indexPath.row])
     }
     
+    func setDateFormat(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+        guard let backendDate = dateFormatter.date(from: date) else { return "" }
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = "dd.MM.yyyy"
+        let date = formatDate.string(from: backendDate)
+        return date
+    }
     
     func fetchSong(idAlbum: Int, completion: @escaping (Bool) -> ()) {
         let urlString = "https://itunes.apple.com/lookup?id=\(idAlbum)&entity=song"

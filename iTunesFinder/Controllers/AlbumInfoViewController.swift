@@ -43,7 +43,7 @@ class AlbumInfoViewController: UIViewController {
         guard let viewModel = viewModel else { return }
         albumNameLabel.text = viewModel.albumName
         artistNameLabel.text = viewModel.artistName
-        yearLabel.text = setDateFormat(date: viewModel.releaseDate)
+        yearLabel.text = viewModel.releaseDate
         tracksNumberLabel.text = "\(viewModel.tracksCount)"
         genreLable.text = viewModel.genre
         
@@ -71,15 +71,6 @@ class AlbumInfoViewController: UIViewController {
         
     }
     
-    private func setDateFormat(date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
-        guard let backendDate = dateFormatter.date(from: date) else { return "" }
-        let formatDate = DateFormatter()
-        formatDate.dateFormat = "dd.MM.yyyy"
-        let date = formatDate.string(from: backendDate)
-        return date
-    }
 }
 
 // MARK: - Table view delegate & data source
