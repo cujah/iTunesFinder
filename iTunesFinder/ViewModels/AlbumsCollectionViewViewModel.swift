@@ -11,7 +11,7 @@ import UIKit
 
 
 class AlbumsCollectionViewViewModel: AlbumsCollectionViewViewModelType {
-    
+
     private var albums: [Album] = []
     private var selectedIndexPath: IndexPath?
     private var searchRequest: SearchRequest?
@@ -41,7 +41,7 @@ class AlbumsCollectionViewViewModel: AlbumsCollectionViewViewModelType {
         self.selectedIndexPath = indexPath
     }
     
-    func fetchAlbums(albumName: String) {
+    func fetchAlbums(albumName: String, completion: @escaping (Bool) -> ()) {
         let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
             if error == nil {
@@ -51,9 +51,9 @@ class AlbumsCollectionViewViewModel: AlbumsCollectionViewViewModelType {
                         return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
                     }
                     self?.albums = sortedAlbums
-//                    self?.collectionView.reloadData()
+                    completion(true)
                 } else {
-                    //alertOk(title: "Not found =(", message: "Album not found, try another words.")
+                    completion(false)
                 }
             } else {
                 print(error!.localizedDescription)

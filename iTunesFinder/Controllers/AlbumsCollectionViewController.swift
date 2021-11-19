@@ -94,16 +94,18 @@ class AlbumsCollectionViewController: UICollectionViewController {
 
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let viewModel = self.viewModel else { return }
         let searchTextRequest = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         if searchTextRequest != "" {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
                 let searchRequest = searchText
                 let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
-                guard let viewModel = self?.viewModel else { return }
-                viewModel.fetchAlbums(albumName: search)
+                viewModel.fetchAlbums(albumName: search, completion: { status in
+                    status ? self?.collectionView.reloadData() :
+                    self?.alertOk(title: "Album not found =(", message: "Album not found. Try another word")
+                })
                 viewModel.saveSearchRequest(withRequest: searchRequest)
-                self?.collectionView.reloadData()
             })
         }
     }
