@@ -16,5 +16,10 @@ protocol AlbumsCollectionViewViewModelType {
     func selectItem(forIndexPath indexPath: IndexPath)
     
     // временно:
-    var albums: [Album] { get set }
+//    var albums: [Album] { get set }
+    
+    
+    
+    func saveSearchRequest(withRequest request: String)
+    func fetchAlbums(albumName: String)
 }

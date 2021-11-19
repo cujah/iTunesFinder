@@ -44,4 +44,8 @@ class AlbumInfoViewModel: AlbumInfoViewModelType {
         return album.collectionId
     }
     
+    
+    
+    
+    
 }

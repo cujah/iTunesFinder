@@ -18,19 +18,11 @@ class AlbumsCollectionViewController: UICollectionViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     var timer: Timer?
-    var historyRequest: String? {
-        didSet {
-            if let request = historyRequest {
-                self.fetchAlbums(albumName: request)
-            }
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ViewModel()
+        viewModel = AlbumsCollectionViewViewModel()
 
         setupDelegate()
         setupNavigationBar()
@@ -64,27 +56,13 @@ class AlbumsCollectionViewController: UICollectionViewController {
         searchController.searchBar.placeholder = "Search"
     }
     
-    private func saveSearchRequest(withRequest request: String) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        guard let entity = NSEntityDescription.entity(forEntityName: "SearchRequest", in: context) else { return }
-        let searchRequestObject = SearchRequest(entity: entity, insertInto: context)
-        searchRequestObject.searchRequest = request
-        
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
-    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(forIndexPath: indexPath)
         performSegue(withIdentifier: "showAlbumInfoSegue", sender: nil)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier, let viewModel = viewModel else { return }
@@ -95,25 +73,6 @@ class AlbumsCollectionViewController: UICollectionViewController {
         }
     }
     
-    private func fetchAlbums(albumName: String) {
-        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
-        NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
-            if error == nil {
-                guard let albumModel = albumModel else { return }
-                if albumModel.results != [] {
-                    let sortedAlbums = albumModel.results.sorted { firstItem, secondItem in
-                        return firstItem.collectionName.compare(secondItem.collectionName) == ComparisonResult.orderedAscending
-                    }
-                    self?.viewModel?.albums = sortedAlbums
-                    self?.collectionView.reloadData()
-                } else {
-                    self?.alertOk(title: "Not found =(", message: "Album not found, try another words.")
-                }
-            } else {
-                print(error!.localizedDescription)
-            }
-        }
-    }
     
 // MARK: UICollectionViewDataSource
 
@@ -139,10 +98,12 @@ extension AlbumsCollectionViewController: UISearchBarDelegate {
         if searchTextRequest != "" {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
+                let searchRequest = searchText
                 let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
-                self?.fetchAlbums(albumName: search)
-                let requestForSaving = search.replacingOccurrences(of: "%20", with: " ")
-                self?.saveSearchRequest(withRequest: requestForSaving)
+                guard let viewModel = self?.viewModel else { return }
+                viewModel.fetchAlbums(albumName: search)
+                viewModel.saveSearchRequest(withRequest: searchRequest)
+                self?.collectionView.reloadData()
             })
         }
     }

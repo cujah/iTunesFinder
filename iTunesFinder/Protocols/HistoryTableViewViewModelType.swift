@@ -10,8 +10,13 @@ import Foundation
 protocol HistoryTableViewViewModelType {
     
     func numberOfRowsInSection() -> Int 
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> HistoryTableViewCellViewModelType?
+    func historyCellViewModel(forIndexPath indexPath: IndexPath) -> HistoryTableViewCellViewModelType?
+    
+    func viewModelForSelectedRow() -> AlbumsCollectionViewViewModelType?
+    func selectRow(atIndexPath indexPath: IndexPath)
     
     func getSearchRequestsHistory()
     func clearHistory()
+    
+    
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 private let reuseIdentifier = "historyCell"
 
@@ -35,18 +34,6 @@ class HistoryTableViewController: UITableViewController {
         tableView.showsVerticalScrollIndicator = false
     }
     
-//    private func getSearchRequestsHistory() {
-//        let context = getContext()
-//
-//        let fetchReqest: NSFetchRequest<SearchRequest> = SearchRequest.fetchRequest()
-//        do {
-//            history = try context.fetch(fetchReqest).reversed()
-//            self.tableView.reloadData()
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//    }
-    
     @IBAction func clearHistoryButtonPressed(_ sender: Any) {
         alertOkCancel(title: "Clear the history?", message: "Press OK to clear the search history.") {
             self.viewModel?.clearHistory()
@@ -55,30 +42,7 @@ class HistoryTableViewController: UITableViewController {
     }
     
     
-    
-//    private func clearHistory() {
-//        let context = getContext()
-//        let fetchReqest: NSFetchRequest<SearchRequest> = SearchRequest.fetchRequest()
-//        if let requests = try? context.fetch(fetchReqest) {
-//            for request in requests {
-//                context.delete(request)
-//            }
-//        }
-//        do {
-//            try context.save()
-//            self.tableView.reloadData()
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//    }
-    
-//    private func getContext() -> NSManagedObjectContext {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        return appDelegate.persistentContainer.viewContext
-//    }
-    
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRowsInSection() ?? 0
@@ -89,29 +53,29 @@ class HistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? HistoryTableViewCell
         guard let historyCell = cell, let viewModel = viewModel else { return UITableViewCell() }
         
-        let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
+        let cellViewModel = viewModel.historyCellViewModel(forIndexPath: indexPath)
         historyCell.viewModel = cellViewModel
         return historyCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let viewModel = viewModel else { return }
+        viewModel.selectRow(atIndexPath: indexPath)
+        performSegue(withIdentifier: "historyRequestSegue", sender: nil)
     }
     
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "historyRequestSegue" {
-//            guard let indexPath = tableView.indexPathForSelectedRow,
-//                  let dvc = segue.destination as? AlbumsCollectionViewController,
-//                  let viewModel = viewModel,
-//                  let searchRequest = viewModel.history[indexPath.row].searchRequest else { return }
-//            dvc.historyRequest = searchRequest
-            
+        guard let identifier = segue.identifier, let viewModel = viewModel else { return }
+        if identifier == "historyRequestSegue" {
+            if let dvc = segue.destination as? AlbumsCollectionViewController {
+                dvc.viewModel = viewModel.viewModelForSelectedRow()
+            }
         }
     }
-    
-    
 }
 
 

@@ -12,12 +12,9 @@ class HistoryTableViewCellViewModel: HistoryTableViewCellViewModelType {
     
     var historyRequest: SearchRequest
     
-    
     private var searchRequest: SearchRequest {
         return historyRequest
     }
-    
-   
     
     init(searchRequest: SearchRequest) {
         self.historyRequest = searchRequest
