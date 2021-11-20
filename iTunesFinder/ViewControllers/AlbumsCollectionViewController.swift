@@ -26,15 +26,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
             viewModel = AlbumsCollectionViewViewModel()
         }
         
-        if viewModel?.searchRequest != nil {
-            guard let request = viewModel?.searchRequest?.searchRequest else { return }
-            viewModel?.fetchAlbums(albumName: request, completion: { _ in
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            })
-        }
-        
+        checkHistoryRequest()
         setupDelegate()
         setupNavigationBar()
         setupSearhController()
@@ -66,6 +58,16 @@ class AlbumsCollectionViewController: UICollectionViewController {
         searchController.searchBar.placeholder = "Search"
     }
     
+    private func checkHistoryRequest() {
+        if viewModel?.searchRequest != nil {
+            guard let request = viewModel?.searchRequest?.searchRequest else { return }
+            viewModel?.fetchAlbums(albumName: request, completion: { _ in
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
+    }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }

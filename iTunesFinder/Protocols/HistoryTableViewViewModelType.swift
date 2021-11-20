@@ -17,6 +17,4 @@ protocol HistoryTableViewViewModelType {
     
     func getSearchRequestsHistory()
     func clearHistory()
-    
-    
 }

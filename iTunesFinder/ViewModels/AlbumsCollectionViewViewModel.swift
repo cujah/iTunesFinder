@@ -75,7 +75,4 @@ class AlbumsCollectionViewViewModel: AlbumsCollectionViewViewModelType {
             print(error.localizedDescription)
         }
     }
-    
-    
-    
 }
