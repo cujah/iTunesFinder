@@ -22,13 +22,23 @@ class AlbumsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = AlbumsCollectionViewViewModel()
-
+        if viewModel == nil {
+            viewModel = AlbumsCollectionViewViewModel()
+        }
+        
+        if viewModel?.searchRequest != nil {
+            guard let request = viewModel?.searchRequest?.searchRequest else { return }
+            viewModel?.fetchAlbums(albumName: request, completion: { _ in
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            })
+        }
+        
         setupDelegate()
         setupNavigationBar()
         setupSearhController()
         setupCollectionView()
-        
     }
 
     

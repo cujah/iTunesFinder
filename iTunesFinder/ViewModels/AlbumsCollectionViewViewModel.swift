@@ -14,7 +14,7 @@ class AlbumsCollectionViewViewModel: AlbumsCollectionViewViewModelType {
 
     private var albums: [Album] = []
     private var selectedIndexPath: IndexPath?
-    private var searchRequest: SearchRequest?
+    var searchRequest: SearchRequest?
     
     init() {}
     

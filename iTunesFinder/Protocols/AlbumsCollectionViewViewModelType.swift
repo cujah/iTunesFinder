@@ -17,4 +17,6 @@ protocol AlbumsCollectionViewViewModelType {
     
     func saveSearchRequest(withRequest request: String)
     func fetchAlbums(albumName: String, completion: @escaping (Bool) -> ())
+    
+    var searchRequest: SearchRequest? { get }
 }
