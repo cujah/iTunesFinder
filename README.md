@@ -1,6 +1,6 @@
 # iTunesFinder
 
-## An application based on UICollectionView and UITableView, using the UIKit and Core Data framework and receiving data from the iTunes API.
+## An application based on MVVM architecture with UICollectionView and UITableView, using the UIKit and Core Data framework and receiving data from the iTunes API.
  
  iTunesFinder is a simple application for the iPhone. The application display album artwork from the iTunes API, and the user able to see detailed information about the selected album.
 Also, search history saved and user can see the search history on the second tab, after tapping on the search string search result will be opened.
