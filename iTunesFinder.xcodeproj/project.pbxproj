@@ -74,6 +74,7 @@
 		095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		099A082427495BBF004D5F95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 		0952427927439E3300AB4217 = {
 			isa = PBXGroup;
 			children = (
+				099A082427495BBF004D5F95 /* README.md */,
 				095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */,
 				095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */,
 				0952428427439E3300AB4217 /* iTunesFinder */,
@@ -108,16 +110,13 @@
 		0952428427439E3300AB4217 /* iTunesFinder */ = {
 			isa = PBXGroup;
 			children = (
-				0952428527439E3300AB4217 /* AppDelegate.swift */,
-				0952428727439E3300AB4217 /* SceneDelegate.swift */,
 				095242BF2746493A00AB4217 /* Protocols */,
 				095242BC274647D700AB4217 /* ViewModels */,
 				095242A62743E0EB00AB4217 /* Models */,
 				095242A72743E0F800AB4217 /* Network */,
 				095242B827458F0400AB4217 /* ViewControllers */,
-				0952428B27439E3300AB4217 /* Main.storyboard */,
-				0952429127439E3700AB4217 /* Assets.xcassets */,
-				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
+				099A082227495986004D5F95 /* SupportFiles */,
+				099A0823274959BB004D5F95 /* IBuilder */,
 				0952429627439E3700AB4217 /* Info.plist */,
 				0952428E27439E3300AB4217 /* iTunesFinder.xcdatamodeld */,
 			);
@@ -188,6 +187,25 @@
 				095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		099A082227495986004D5F95 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0952428527439E3300AB4217 /* AppDelegate.swift */,
+				0952428727439E3300AB4217 /* SceneDelegate.swift */,
+				0952429127439E3700AB4217 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		099A0823274959BB004D5F95 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				0952428B27439E3300AB4217 /* Main.storyboard */,
+				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
