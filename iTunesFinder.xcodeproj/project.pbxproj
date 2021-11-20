@@ -74,7 +74,6 @@
 		095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		099A082427495BBF004D5F95 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +90,6 @@
 		0952427927439E3300AB4217 = {
 			isa = PBXGroup;
 			children = (
-				099A082427495BBF004D5F95 /* README.md */,
 				095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */,
 				095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */,
 				0952428427439E3300AB4217 /* iTunesFinder */,
