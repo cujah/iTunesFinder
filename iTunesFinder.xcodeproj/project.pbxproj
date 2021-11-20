@@ -15,6 +15,17 @@
 		0952429527439E3700AB4217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0952429327439E3700AB4217 /* LaunchScreen.storyboard */; };
 		0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */; };
 		0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */; };
+		095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */; };
+		095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A22743DBFE00AB4217 /* AlbumModel.swift */; };
+		095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A42743DD4600AB4217 /* NetworkRequest.swift */; };
+		095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A82743E11900AB4217 /* NetworkDataFetch.swift */; };
+		095242AB27442F2300AB4217 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AA27442F2200AB4217 /* SongsModel.swift */; };
+		095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* TrackTableViewCell.swift */; };
+		095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AE2744F97200AB4217 /* HistoryTableViewController.swift */; };
+		095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B02744F99000AB4217 /* HistoryTableViewCell.swift */; };
+		095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */; };
+		095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */; };
+		095242B727456EFA00AB4217 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B627456EF800AB4217 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +39,17 @@
 		0952429627439E3700AB4217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewController.swift; sourceTree = "<group>"; };
 		0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCoverCollectionViewCell.swift; sourceTree = "<group>"; };
+		095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewController.swift; sourceTree = "<group>"; };
+		095242A22743DBFE00AB4217 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		095242A42743DD4600AB4217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		095242A82743E11900AB4217 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		095242AA27442F2200AB4217 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
+		095242AC2744449F00AB4217 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		095242AE2744F97200AB4217 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		095242B02744F99000AB4217 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
+		095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		095242B627456EF800AB4217 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +66,8 @@
 		0952427927439E3300AB4217 = {
 			isa = PBXGroup;
 			children = (
+				095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */,
+				095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */,
 				0952428427439E3300AB4217 /* iTunesFinder */,
 				0952428327439E3300AB4217 /* Products */,
 			);
@@ -62,8 +86,9 @@
 			children = (
 				0952428527439E3300AB4217 /* AppDelegate.swift */,
 				0952428727439E3300AB4217 /* SceneDelegate.swift */,
-				0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */,
-				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
+				095242A62743E0EB00AB4217 /* Models */,
+				095242A72743E0F800AB4217 /* Network */,
+				095242B827458F0400AB4217 /* Controllers */,
 				0952428B27439E3300AB4217 /* Main.storyboard */,
 				0952429127439E3700AB4217 /* Assets.xcassets */,
 				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
@@ -71,6 +96,46 @@
 				0952428E27439E3300AB4217 /* iTunesFinder.xcdatamodeld */,
 			);
 			path = iTunesFinder;
+			sourceTree = "<group>";
+		};
+		095242A62743E0EB00AB4217 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				095242A22743DBFE00AB4217 /* AlbumModel.swift */,
+				095242AA27442F2200AB4217 /* SongsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		095242A72743E0F800AB4217 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				095242A42743DD4600AB4217 /* NetworkRequest.swift */,
+				095242A82743E11900AB4217 /* NetworkDataFetch.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		095242B827458F0400AB4217 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				095242B927458F1E00AB4217 /* Cells */,
+				0952429C27439E9900AB4217 /* AlbumsCollectionViewController.swift */,
+				095242A02743BFE500AB4217 /* AlbumInfoViewController.swift */,
+				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
+				095242B627456EF800AB4217 /* Alerts.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		095242B927458F1E00AB4217 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
+				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
+				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,11 +209,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				095242AB27442F2300AB4217 /* SongsModel.swift in Sources */,
+				095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */,
+				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
+				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
+				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
+				095242B727456EFA00AB4217 /* Alerts.swift in Sources */,
+				095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
+				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
+				095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */,
 				0952428827439E3300AB4217 /* SceneDelegate.swift in Sources */,
 				0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */,
+				095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */,
+				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
