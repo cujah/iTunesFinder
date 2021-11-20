@@ -20,12 +20,24 @@
 		095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A42743DD4600AB4217 /* NetworkRequest.swift */; };
 		095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242A82743E11900AB4217 /* NetworkDataFetch.swift */; };
 		095242AB27442F2300AB4217 /* SongsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AA27442F2200AB4217 /* SongsModel.swift */; };
-		095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* TrackTableViewCell.swift */; };
+		095242AD2744449F00AB4217 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AC2744449F00AB4217 /* SongTableViewCell.swift */; };
 		095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242AE2744F97200AB4217 /* HistoryTableViewController.swift */; };
 		095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B02744F99000AB4217 /* HistoryTableViewCell.swift */; };
 		095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */; };
 		095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */; };
 		095242B727456EFA00AB4217 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242B627456EF800AB4217 /* Alerts.swift */; };
+		095242BB274647C200AB4217 /* AlbumsCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BA274647C200AB4217 /* AlbumsCollectionViewViewModel.swift */; };
+		095242BE2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242BD2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift */; };
+		095242C12746571600AB4217 /* AlbumsCollectionCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */; };
+		095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */; };
+		095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */; };
+		095242C7274685C000AB4217 /* AlbumInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */; };
+		095242C92746C7DE00AB4217 /* HistoryTableViewViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */; };
+		095242CB2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */; };
+		095242CD2746C9E000AB4217 /* HistoryTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */; };
+		095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */; };
+		095242D12747D39D00AB4217 /* SongTableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */; };
+		095242D32747D44400AB4217 /* SongTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,12 +56,24 @@
 		095242A42743DD4600AB4217 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		095242A82743E11900AB4217 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		095242AA27442F2200AB4217 /* SongsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsModel.swift; sourceTree = "<group>"; };
-		095242AC2744449F00AB4217 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		095242AC2744449F00AB4217 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		095242AE2744F97200AB4217 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		095242B02744F99000AB4217 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		095242B22745144800AB4217 /* SearchRequest+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataClass.swift"; sourceTree = "<group>"; };
 		095242B32745144800AB4217 /* SearchRequest+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		095242B627456EF800AB4217 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		095242BA274647C200AB4217 /* AlbumsCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		095242BD2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewViewModelType.swift; sourceTree = "<group>"; };
+		095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionCellViewModelType.swift; sourceTree = "<group>"; };
+		095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModelType.swift; sourceTree = "<group>"; };
+		095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoViewModel.swift; sourceTree = "<group>"; };
+		095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewViewModelType.swift; sourceTree = "<group>"; };
+		095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewModel.swift; sourceTree = "<group>"; };
+		095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +108,13 @@
 		0952428427439E3300AB4217 /* iTunesFinder */ = {
 			isa = PBXGroup;
 			children = (
-				0952428527439E3300AB4217 /* AppDelegate.swift */,
-				0952428727439E3300AB4217 /* SceneDelegate.swift */,
+				095242BF2746493A00AB4217 /* Protocols */,
+				095242BC274647D700AB4217 /* ViewModels */,
 				095242A62743E0EB00AB4217 /* Models */,
 				095242A72743E0F800AB4217 /* Network */,
-				095242B827458F0400AB4217 /* Controllers */,
-				0952428B27439E3300AB4217 /* Main.storyboard */,
-				0952429127439E3700AB4217 /* Assets.xcassets */,
-				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
+				095242B827458F0400AB4217 /* ViewControllers */,
+				099A082227495986004D5F95 /* SupportFiles */,
+				099A0823274959BB004D5F95 /* IBuilder */,
 				0952429627439E3700AB4217 /* Info.plist */,
 				0952428E27439E3300AB4217 /* iTunesFinder.xcdatamodeld */,
 			);
@@ -116,7 +139,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		095242B827458F0400AB4217 /* Controllers */ = {
+		095242B827458F0400AB4217 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				095242B927458F1E00AB4217 /* Cells */,
@@ -125,17 +148,62 @@
 				095242AE2744F97200AB4217 /* HistoryTableViewController.swift */,
 				095242B627456EF800AB4217 /* Alerts.swift */,
 			);
-			path = Controllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		095242B927458F1E00AB4217 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				0952429E27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift */,
-				095242AC2744449F00AB4217 /* TrackTableViewCell.swift */,
+				095242AC2744449F00AB4217 /* SongTableViewCell.swift */,
 				095242B02744F99000AB4217 /* HistoryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		095242BC274647D700AB4217 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				095242BA274647C200AB4217 /* AlbumsCollectionViewViewModel.swift */,
+				095242C22746581400AB4217 /* CollectionViewCellViewModel.swift */,
+				095242C6274685C000AB4217 /* AlbumInfoViewModel.swift */,
+				095242D22747D44400AB4217 /* SongTableViewCellViewModel.swift */,
+				095242CC2746C9E000AB4217 /* HistoryTableViewModel.swift */,
+				095242CE2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		095242BF2746493A00AB4217 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				095242BD2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift */,
+				095242C02746571600AB4217 /* AlbumsCollectionCellViewModelType.swift */,
+				095242C42746819600AB4217 /* AlbumInfoViewModelType.swift */,
+				095242D02747D39B00AB4217 /* SongTableViewCellViewModelType.swift */,
+				095242C82746C7DE00AB4217 /* HistoryTableViewViewModelType.swift */,
+				095242CA2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		099A082227495986004D5F95 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0952428527439E3300AB4217 /* AppDelegate.swift */,
+				0952428727439E3300AB4217 /* SceneDelegate.swift */,
+				0952429127439E3700AB4217 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		099A0823274959BB004D5F95 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				0952428B27439E3300AB4217 /* Main.storyboard */,
+				0952429327439E3700AB4217 /* LaunchScreen.storyboard */,
+			);
+			path = IBuilder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,21 +278,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				095242AB27442F2300AB4217 /* SongsModel.swift in Sources */,
+				095242CD2746C9E000AB4217 /* HistoryTableViewModel.swift in Sources */,
 				095242A32743DBFE00AB4217 /* AlbumModel.swift in Sources */,
 				095242B12744F99000AB4217 /* HistoryTableViewCell.swift in Sources */,
 				095242A12743BFE500AB4217 /* AlbumInfoViewController.swift in Sources */,
 				095242A52743DD4600AB4217 /* NetworkRequest.swift in Sources */,
+				095242C7274685C000AB4217 /* AlbumInfoViewModel.swift in Sources */,
 				095242B727456EFA00AB4217 /* Alerts.swift in Sources */,
+				095242BB274647C200AB4217 /* AlbumsCollectionViewViewModel.swift in Sources */,
 				095242B42745144800AB4217 /* SearchRequest+CoreDataClass.swift in Sources */,
 				0952429027439E3300AB4217 /* iTunesFinder.xcdatamodeld in Sources */,
+				095242C32746581400AB4217 /* CollectionViewCellViewModel.swift in Sources */,
 				095242A92743E11900AB4217 /* NetworkDataFetch.swift in Sources */,
+				095242C12746571600AB4217 /* AlbumsCollectionCellViewModelType.swift in Sources */,
+				095242CB2746C8A000AB4217 /* HistoryTableViewCellViewModelType.swift in Sources */,
+				095242BE2746493600AB4217 /* AlbumsCollectionViewViewModelType.swift in Sources */,
 				0952428627439E3300AB4217 /* AppDelegate.swift in Sources */,
 				0952429D27439E9900AB4217 /* AlbumsCollectionViewController.swift in Sources */,
 				095242AF2744F97200AB4217 /* HistoryTableViewController.swift in Sources */,
 				0952428827439E3300AB4217 /* SceneDelegate.swift in Sources */,
 				0952429F27439ECB00AB4217 /* AlbumCoverCollectionViewCell.swift in Sources */,
 				095242B52745144900AB4217 /* SearchRequest+CoreDataProperties.swift in Sources */,
-				095242AD2744449F00AB4217 /* TrackTableViewCell.swift in Sources */,
+				095242C52746819700AB4217 /* AlbumInfoViewModelType.swift in Sources */,
+				095242CF2746CA4E00AB4217 /* HistoryTableViewCellViewModel.swift in Sources */,
+				095242C92746C7DE00AB4217 /* HistoryTableViewViewModelType.swift in Sources */,
+				095242D12747D39D00AB4217 /* SongTableViewCellViewModelType.swift in Sources */,
+				095242D32747D44400AB4217 /* SongTableViewCellViewModel.swift in Sources */,
+				095242AD2744449F00AB4217 /* SongTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
