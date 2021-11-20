@@ -92,7 +92,10 @@ class AlbumsCollectionViewController: UICollectionViewController {
     
     private func fetchAlbums(albumName: String) {
         
-        let urlString = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
+        let searchTextRequest = albumName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let searchRequst = searchTextRequest!.split(separator: " ").joined(separator: "%20")
+        self.saveSearchRequest(withRequest: albumName)
+        let urlString = "https://itunes.apple.com/search?term=\(searchRequst)&entity=album&attribute=albumTerm"
         
         NetworkDataFetch.shared.fetchAlbum(urlString: urlString) { [weak self] albumModel, error in
             if error == nil {
@@ -105,6 +108,7 @@ class AlbumsCollectionViewController: UICollectionViewController {
                     }
                     self?.albums = sortedAlbums
                     self?.collectionView.reloadData()
+                    
                 } else {
                     self?.alertOk(title: "Not found =(", message: "Album not found, try another words.")
                 }
@@ -135,14 +139,10 @@ class AlbumsCollectionViewController: UICollectionViewController {
 
 extension AlbumsCollectionViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let searchTextRequest = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        if searchTextRequest != "" {
+        if searchText != "" {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self] _ in
-                let search = searchTextRequest!.split(separator: " ").joined(separator: "%20")
-                self?.fetchAlbums(albumName: search)
-                let requestForSaving = search.replacingOccurrences(of: "%20", with: " ")
-                self?.saveSearchRequest(withRequest: requestForSaving)
+                self?.fetchAlbums(albumName: searchText)
             })
         }
     }
